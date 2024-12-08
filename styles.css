@@ -1,0 +1,899 @@
+/* Variáveis de cor */
+:root {
+    --primary-color: #14726C;
+    --secondary-color: #58B5B0;
+    --dark-color: #235A54;
+    --light-color: #F6F6F7;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo da logo */
+.logo {
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.logo img {
+    height: 50px; /* Ajuste conforme necessário */
+    width: auto;
+}
+
+/* Sessão Principal */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--light-color);
+    height: 100vh;
+    padding: 2rem;
+    gap: 0rem;
+}
+
+.hero-content {
+    width: 70%; /* Texto ocupa 70% da largura */
+    text-align: left; /* Alinhamento ajustado */
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+.hero-image-container {
+    width: 30%; /* Imagem ocupa 30% da largura */
+    height: auto;
+    margin-left: 10rem; /* Adiciona um espaçamento maior à esquerda */
+}
+
+.hero-image {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 50px 0 50px 0; /* Arredondamento ajustado */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: var(--light-color);
+}
+
+/* Inverter ordem dos elementos */
+.hero {
+    flex-direction: row-reverse;
+}
+
+/* Sessões Secundárias */
+.services,
+.other-section {
+    width: 100%; /* Ocupa 100% da largura da tela */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    padding: 4rem 2rem;
+    background-color: var(--light-color);
+    color: var(--light-color);
+    text-align: center;
+}
+
+/* Sessão Sobre Mim */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    height: 100vh; /* Ocupa toda a altura da tela */
+    padding: 2rem;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.about-content {
+    width: 60%; /* Texto ocupa 60% */
+    text-align: justify; /* Alinhamento justificado */
+    color: var(--light-color);
+    line-height: 1.8;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: var(--light-color);
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+}
+
+.about-image-container {
+    width: 40%; /* Imagem ocupa 40% */
+    height: auto;
+}
+
+.about-image {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50px 0 50px 0; /* Mesma configuração da primeira sessão */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Sessão Avaliações */
+.testimonials {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+    height: 100vh; /* Ocupa a altura total da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-container {
+    position: relative;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-item {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(100%); /* Começa fora da tela à direita */
+    transition: all 1s ease-in-out; /* Transições suaves */
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    line-height: 1.8;
+    background-color: var(--light-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.testimonial-item h4 {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Classe ativa */
+.testimonial-item.active {
+    opacity: 1;
+    transform: translateX(0); /* Centralizado */
+}
+
+.testimonial-item.exit {
+    opacity: 0;
+    transform: translateX(-100%); /* Sai pela esquerda */
+}
+
+/* Estilo base da seção */
+#sessoes {
+    width: 100%;
+    min-height: 100vh; /* Ocupar 100% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9; /* Cor de fundo */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Container para texto e ícones */
+.sessoes-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite ajuste em telas menores */
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Texto à esquerda */
+.sessoes-text {
+    flex: 1; /* Ocupa 40% da largura */
+    text-align: left;
+}
+
+.sessoes-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.sessoes-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+/* Ícones à direita */
+.sessoes-icons {
+    flex: 1.5; /* Ocupa 60% da largura */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icone {
+    text-align: center;
+    flex: 1;
+    max-width: 200px; /* Tamanho máximo de cada ícone */
+}
+
+.icone img {
+    width: 150px; /* Ajuste o tamanho das imagens */
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.icone p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Botão abaixo do texto */
+.sessoes-button {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.sessoes-button img {
+    width: 200px; /* Ajuste conforme necessário */
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sessoes-button img:hover {
+    transform: scale(1.1); /* Efeito de zoom no hover */
+    opacity: 0.8;
+}
+
+
+/* Título da Seção */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* Lista de Serviços */
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.service-item {
+    background-color: var(--light-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Invisível inicialmente */
+    transform: translateY(50px); /* Deslocamento inicial */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+
+/* Animação ativada */
+.service-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para iPads e Tablets (Mesma aparência da versão Desktop) */
+@media (max-width: 1024px) {
+.hero {
+    padding: 40px 5%;  /* 5% de padding nas laterais */
+    margin-left: auto;  /* Alinha à esquerda */
+    margin-right: auto; /* Alinha à direita */
+    max-width: 100%;    /* Garante que a largura não exceda 100% */
+    box-sizing: border-box; /* Inclui o padding no cálculo da largura */
+    display: flex; /* Usa flexbox para layout */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: space-between; /* Distribui o conteúdo com espaçamento entre eles */
+}
+
+.hero-content {
+    text-align: justify; /* Alinhamento do texto */
+    max-width: 50%; /* Limita o texto a 50% da largura */
+}
+
+.hero-content h1 {
+    font-size: 30px; /* Ajusta o tamanho da fonte do título */
+}
+
+.hero-content p {
+    font-size: 18px; /* Ajusta o tamanho da fonte do parágrafo */
+}
+
+.hero-image-container {
+    text-align: justify; /* Alinha a imagem à esquerda */
+}
+
+.hero-image {
+    width: 90%; /* Ajusta a largura da imagem para 40% */
+    margin-right: 15px; /* Adiciona espaço entre a imagem e o texto */
+    float: left; /* Faz a imagem flutuar à esquerda */
+}
+
+
+
+#about {
+    padding: 40px 5%; /* Mantém o padding horizontal com 5% */
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between; /* Garante que o conteúdo e a imagem fiquem separados */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    gap: 20px; /* Espaço entre o conteúdo e a imagem */
+}
+
+.about-content {
+    flex: 1; /* Garante que o conteúdo ocupe o espaço disponível */
+    text-align: justify; /* Justifica o texto */
+}
+
+.about-content h2 {
+    font-size: 30px; /* Ajusta o tamanho do título */
+}
+
+.about-content p {
+    font-size: 20px; /* Ajusta o tamanho da fonte do parágrafo */
+}
+
+.about-image-container {
+    flex: 1; /* Garante que a imagem ocupe o espaço disponível */
+    text-align: center; /* Centraliza a imagem */
+}
+
+.about-image {
+    width: 100%; /* Aumenta a largura da imagem para ocupar 100% do espaço disponível */
+    max-width: 350px; /* Define um limite máximo para a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 20px; /* Espaço acima da imagem */
+}
+
+/* Lista de Serviços */
+.service-item {
+    font-size: 1.6rem;
+}
+
+/* Sessão "Sessoes" - Ajustes */
+/* Sessão "Sessoes" - Ajustes */
+#sessoes {
+    padding: 40px 5%;  /* Define o padding lateral de 5% */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    max-width: 100%;   /* Garante que a largura não ultrapasse 100% */
+    box-sizing: border-box; /* Garante que o padding seja incluído nas dimensões totais */
+}
+
+.sessoes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sessoes-text {
+    text-align: justify; /* Justifica o texto */
+    max-width: 800px; /* Limita a largura do texto */
+    margin-bottom: 20px; /* Espaço entre o texto e os ícones */
+}
+
+.sessoes-text h2 {
+    font-size: 36px; /* Tamanho do título */
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+}
+
+.sessoes-text p {
+    font-size: 18px; /* Tamanho da fonte do parágrafo */
+}
+
+.sessoes-button {
+    display: flex;
+    justify-content: center; /* Centraliza o botão */
+    margin-top: 20px; /* Espaço entre o parágrafo e o botão */
+}
+
+.sessoes-button a img {
+    width: 150px; /* Define o tamanho da imagem no botão */
+}
+
+.sessoes-icons {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones horizontalmente */
+    gap: 30px; /* Espaço entre os ícones */
+    margin-top: 40px; /* Espaço entre o conteúdo e os ícones */
+}
+
+.icone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icone img {
+    width: 70%; /* Ajuste a largura das imagens dos ícones */
+    height: 70%; /* Ajuste a altura das imagens dos ícones */
+    object-fit: cover; /* Garante que a imagem preencha a área sem distorção */
+    margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+}
+
+.icone p {
+    font-size: 18px; /* Tamanho do texto abaixo dos ícones */
+    text-align: center; /* Centraliza o texto */
+}
+
+
+}
+
+/* Responsividade para celulares */
+
+
+/* Outros estilos */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza os itens no header */
+  height: 60px;
+  padding: 0 20px;
+  background-color: #f8f8f8;
+  position: relative; /* Permite posicionar a logo separadamente */
+}
+
+.logo {
+  position: absolute; /* Remove a logo do fluxo normal */
+  left: 20px; /* Define a posição da logo à esquerda */
+  height: 60px; /* Ajusta o tamanho da logo */
+  max-height: 100%; /* Garante que a logo respeite a altura do header */
+}
+
+
+nav {
+  display: flex;
+  justify-content: center; /* Garante que o menu seja centralizado */
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Espaçamento entre os itens do menu */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  font-size: 16px;
+}
+
+
+.menu {
+    background: var(--primary-color);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.menu nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu nav a:hover {
+    color: var(--dark-color);
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+}
+
+.menu {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 4px;
+    background-color: var(--dark-color);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* Contato */
+.contact-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    padding: 2rem;
+    gap: 2rem;
+    box-sizing: border-box;
+    background-color: var(--secondary-color);
+}
+
+.map-container {
+    width: 30%; /* Mapa ocupa 20% da largura */
+    height: 40%; /* Preenche a altura total */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.map-container iframe {
+    flex: 1; /* Ajusta o iframe para ocupar o espaço vertical */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+}
+
+.address-text {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.contact-container {
+    width: 80%; /* Ocupa o restante do espaço */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-links {
+    width: 30%; /* Links ocupam 30% do espaço restante */
+}
+
+.contact-links img {
+    width: 40px;  /* Tamanho do ícone */
+        height: 40px;
+}
+
+.contact-links h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-links li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #007BFF; /* Azul para os links */
+    font-size: 1rem;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    width: 65%; /* Formulário ocupa o restante do espaço */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Transição suave para âncoras */
+html {
+    scroll-behavior: smooth;
+}
+
+.image-container {
+  width: 30px;
+  height: 30px;
+  background-image: url('img/Icones/meni.png');
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+     header {
+        display: flex;
+        justify-content: center; /* Centraliza a logo no cabeçalho */
+        padding: 10px;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo img {
+        height: 40px; /* Ajuste o tamanho da logo para caber melhor em telas menores */
+    }
+    
+    .hero {
+        flex-direction: column-reverse; /* Texto fica abaixo da imagem */
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+        height: auto; /* Ajusta altura */
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-image-container {
+        width: 80%; /* Ajuste o tamanho da imagem */
+        margin-left: 0; /* Remove o espaçamento à esquerda */
+    }
+
+    .services-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .service-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content {
+    width: 100%; /* Texto ocupa 70% da largura */
+    text-align: justify-all; /* Alinhamento ajustado */
+    color: var(--secondary-color);
+    line-height: 1.6;
+    font-size: 10px; /* Diminua o tamanho da fonte conforme necessário */
+    
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+    .hero-image-container {
+        width: 80%; /* Ajuste o tamanho da imagem */
+        margin-top: 20%; /* Remove o espaçamento à esquerda */
+    }
+
+    .about-image-container {
+        display: none; /* Esconde a imagem */
+    }
+
+    .service-item:nth-child(n+6){
+          display: none; /* Oculta os itens a partir do sexto */
+    }
+
+    /* Reordena os elementos */
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Espaçamento entre os elementos */
+        width: 100%; /* Certifique-se que o contêiner ocupe 100% da largura */
+    }
+
+    /* Redes sociais aparecem primeiro */
+    .contact-container {
+        order: 1;
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+
+    /* Mapa ocupa 90% da largura */
+    .map-container {
+        order: 2;
+        width: 100%; /* 90% da largura */
+        margin: 0 auto; /* Centraliza o mapa */
+    }
+
+    /* Formulário vai por último */
+    .contact-form {
+        display: none;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /*Menu*/
+    .nav-list {
+    position: absolute;
+    top: 6.3vh;
+    left: 0;
+    width: 50vw;
+    height: 92vh;
+    background: var(--secondary-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-list.active {
+        transform: translateX(0);
+    }
+
+    @keyframes navLinkFade {
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .contact-container {
+    width: 90%; /* Agora ocupa 90% do espaço horizontal */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha */
+}
+.contact-container > div {
+    width: 100%; /* Faz com que os itens ocupem 100% do espaço disponível */
+    margin-bottom: 20px; /* Espaço entre os itens */
+}
+
+.map {
+    width: 100%; /* O mapa vai ocupar 90% do espaço horizontal */
+    margin-top: 20px; /* Distância entre o mapa e o conteúdo acima */
+}
+
+.map-container {
+        width: 90%; /* O mapa ocupa 90% da largura */
+        height: 300px; /* Ajuste a altura conforme necessário */
+        margin-top: 20px; /* Espaçamento entre o conteúdo e o mapa */
+    }
+
+}
